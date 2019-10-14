@@ -19,6 +19,11 @@ app.get('/greeting/:name', (req, res) => {
     res.send(`Wow! Hello there ${req.params.name}!`)
 })
 
+app.get('/fibonacci/:fib', (req, res) => {
+    let x = req.params.fib
+    res.send(`${Math.sqrt(5*Math.pow(x,2)-4) % 1 === 0 || Math.sqrt(5*Math.pow(x,2)+4) % 1 === 0 ?  `${x} is` : `${x} is not`}`);
+})
+
 app.listen(6969, (err) => {
     console.log('I am running on port 6969');
 });
